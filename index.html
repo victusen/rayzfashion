@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ray'z Fashion Luxuria — Premier bespoke fashion house in Eket, Akwa Ibom. Handcrafted unisex designs, intentional fashion, and tailored elegance.">
+  <title>Ray'z Fashion Luxuria | Bespoke Fashion Home</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js" defer></script>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav id="mainNav">
+    <a href="#" class="nav-brand">Ray'z</a>
+    
+    <!-- Mobile Menu Button -->
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#collections">Collections</a></li>
+      <li><a href="#about">The Studio</a></li>
+      <li><a href="#wardrobe">Wardrobe</a></li>
+      <li><a href="#bespoke">Bespoke</a></li>
+      <li><a href="#footer">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header id="hero">
+    <div class="hero-image-wrap">
+      <img src="img/model.png" alt="Ray'z Fashion Hero">
+    </div>
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <!-- <span class="hero-logo-text reveal">Eket · Akwa Ibom · Nigeria</span> -->
+      <h1 class="hero-title reveal reveal-delay-1">
+        Ray'z
+        <span>Fashion Luxuria</span>
+      </h1>
+      <p class="hero-sub reveal reveal-delay-2">Bespoke · Unisex · Handcrafted</p>
+      <a href="#collections" class="hero-cta reveal reveal-delay-3">Explore Collections</a>
+  </header>
+
+  <!-- COLLECTIONS SECTION -->
+  <section id="collections">
+    <div class="collections-header reveal">
+      <span class="section-label">The Portfolio</span>
+      <h2 class="section-title">Crafted<br>With Intention</h2>
+      <div class="gold-rule"></div>
+    </div>
+    
+    <div class="carousel-container reveal">
+      <div class="carousel-wrap">
+        <div class="carousel-track" id="carouselTrack">
+          <!-- Items will be injected by JavaScript -->
+        </div>
+      </div>
+      
+      <div class="carousel-controls">
+        <div class="carousel-nav">
+          <button class="carousel-btn" id="prevBtn" aria-label="Previous Slide">&#8592;</button>
+          <button class="carousel-btn" id="nextBtn" aria-label="Next Slide">&#8594;</button>
+        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE STATEMENT -->
+  <section id="statement">
+    <div class="statement-inner">
+      <p class="statement-text reveal">
+        Every Stitch<br>Tells a Story<br>of Excellence
+      </p>
+      <p class="statement-attr reveal reveal-delay-1">— Holiness Usen, Founder & Creative Director</p>
+    </div>
+  </section>
+
+  <!-- ABOUT THE FOUNDER -->
+  <section id="about">
+    <div class="about-container">
+      <div class="about-photos-grid reveal">
+        <div class="about-photos-wrap">
+          <img class="about-photo p1" src="img/pic.png" alt="Founder Holiness Usen">
+          <img class="about-photo p2" src="img/model.png" alt="Work in Progress">
+          <img class="about-photo p3" src="img/pic1.png" alt="Detail Work">
+          <div class="gold-frame"></div>
+        </div>
+      </div>
+      
+      <div class="about-content">
+        <span class="section-label reveal">Our Heritage</span>
+        <h2 class="section-title reveal">Stitching The<br>Future</h2>
+        <div class="gold-rule reveal"></div>
+        <p class="reveal reveal-delay-1">
+          Ray'z Fashion Luxuria is born from a desire to merge traditional African craftsmanship with contemporary global aesthetics. Founded by Holiness Usen in the heart of Eket, our studio serves as a sanctuary for those who value fit, fabric, and the fine art of tailoring.
+        </p>
+        
+        <div class="about-stat reveal reveal-delay-2">
+          <div class="stat-item">
+            <span class="stat-num">5+</span>
+            <span class="stat-label">Years of Craft</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">200+</span>
+            <span class="stat-label">Bespoke Pieces</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">1</span>
+            <span class="stat-label">Vision</span>
+          </div>
+        </div>
+        
+        <div class="about-signature reveal reveal-delay-3">Holiness Usen</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WARDROBE GRID -->
+  <section id="wardrobe">
+    <div class="wardrobe-header reveal">
+      <span class="section-label">Inventory & Inspiration</span>
+      <h2 class="section-title">Style Has<br>No Limits</h2>
+      <div class="gold-rule"></div>
+      <p>A curated look into our most celebrated works. From corporate power suits to vibrant traditional attire.</p>
+    </div>
+    
+    <div class="wardrobe-grid reveal" id="wardrobeGrid">
+      <!-- Grid items will be injected by JavaScript -->
+    </div>
+  </section>
+
+  <!-- BESPOKE CTA -->
+  <section id="bespoke">
+    <div class="bespoke-inner">
+      <span class="section-label reveal">The Luxuria Experience</span>
+      <h2 class="section-title reveal">Wear Your<br>Masterpiece</h2>
+      <div class="gold-rule reveal"></div>
+      <p class="reveal reveal-delay-1">
+        Experience fashion that fits your life perfectly. We offer personalized consultations to bring your dream outfit to reality.
+      </p>
+      <div class="cta-actions reveal reveal-delay-2">
+        <a href="https://wa.me/2340000000000" class="btn-gold">Consult Our Studio</a>
+        <a href="#footer" class="btn-outline">Find Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-top reveal">
+      <div class="footer-newsletter">
+        <h3>Join The Inner Circle</h3>
+        <p>Subscribe for early access to new collections and studio updates.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your best email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-main">
+      <div class="footer-brand-col">
+        <div class="footer-brand-name">Ray'z</div>
+        <div class="footer-brand-sub">Fashion Luxuria</div>
+        <p class="footer-brand-desc">Handcrafting the narrative of African elegance from Eket to the world.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" aria-label="Instagram">IG</a>
+          <a href="#" class="social-btn" aria-label="Facebook">FB</a>
+          <a href="#" class="social-btn" aria-label="WhatsApp">WA</a>
+          <a href="#" class="social-btn" aria-label="TikTok">TK</a>
+        </div>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#wardrobe">The Wardrobe</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Studio</h4>
+          <ul>
+            <li>Eket, Akwa Ibom State</li>
+            <li>Nigeria</li>
+            <li><a href="mailto:hello@rayzfashion.ng">hello@rayzfashion.ng</a></li>
+            <li>+234 XXX XXX XXXX</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <span>&copy; 2026 <span class="gold-text">Ray'z Fashion Luxuria</span>.</span>
+        <span>Crafted by Holiness Usen in Akwa Ibom</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
