@@ -11,105 +11,120 @@
 </head>
 <body>
 
-    <!-- Section 1: The Audacious Header -->
-         <header>
-            <div class="container">
-                <div class="header-inner">
-                    <span>HOLINESS</span>
-                    <!-- <img src="img/logo-white.png" alt="Rayz Fashion Luxuria Logo" class="logo"> -->
-                    <span>USEN</span>
-                </div>
+    <!-- Section 1: The Editorial Header -->
+    <header>
+        <div class="container header-inner">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Brides</a></li>
+                <li><a href="#">Non-Bridals</a></li>
+            </ul>
+            <div class="logo-container">
+                <img src="img/logo.png" alt="Rayz Fashion Luxuria Logo" class="logo">
             </div>
-        </header>
+            <ul class="nav-links">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Tour Waitlist</a></li>
+                <li><a href="#">Enquiry</a></li>
+            </ul>
+        </div>
+    </header>
 
     <main>
 
-        <!-- Section 2: Muse & Mark Hero - Redesigned -->
+        <!-- Section 2: The Gutsy Collection Hero -->
         <section class="hero">
-            <div class="hero-overlay">
-                <img src="img/logo-white.png" alt="">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <h1 class="hero-title">THE GUTSY COLLECTION</h1>
+                <a href="#" class="hero-cta">View Collection</a>
             </div>
         </section>
 
-        <!-- Section 3: The Founder’s Atelier -->
-        <section class="container section-founder">
-            <div class="founder">
-                <div class="founder-img" id="founder-scroll">
+        <!-- Section 3: The "Make an Enquiry" Parallax -->
+        <section class="enquiry-cta">
+            <div class="enquiry-content">
+                <h2>Make an Enquiry Today</h2>
+                <a href="#" class="btn-white-outline">Make an Enquiry</a>
+            </div>
+        </section>
+
+        <!-- Section 4: The Founder’s Atelier -->
+        <section class="section-founder">
+            <div class="container founder">
+                <div class="founder-img">
                     <img src="img/model2.png" alt="Holiness Usen - The Visionary" loading="lazy">
                 </div>
                 <div class="founder-content">
-                    <h2 class="montserrat">THE VISIONARY</h2>
+                    <h2>THE VISIONARY</h2>
                     <p>Holiness Raymond Usen is the creative CEO and Founder of Rayz Fashion Luxuria. She has a relentless pursuit of perfection and a deep understanding of the feminine silhouette, she transforms fabrics into architectural masterpieces that speak a language of bold sophistication.</p>
                     <p class="pull-quote serif">"Bespoke is the language of our Brand."</p>
                 </div>
             </div>
         </section>
 
-        <!-- Section 4: The Styled Portfolio -->
-        <section class="container">
-            <h1 class="montserrat" style="text-align: center; margin-bottom: 80px; margin-top: 200px; font-size: 3.5rem; font-weight: 700; line-height: 1.2;">CHECK OUT THIS PIECES</h1>
+        <!-- Section 5: The Styled Portfolio -->
+        <section class="container" style="padding-top: 100px;">
+            <h2 style="text-align: center; margin-bottom: 60px; font-size: 2rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 400;">Bespoke Wears For Any Occasion</h2>
             <div class="portfolio-grid">
-                <div class="portfolio-item tall">
+                <div class="portfolio-item">
                     <img src="img/model2.png" alt="Luxury Gown 1" loading="lazy">
                 </div>
-                <div class="portfolio-item detail">
+                <div class="portfolio-item">
                     <img src="img/model3.png" alt="Garment Detail 1" loading="lazy">
                 </div>
-                <div class="portfolio-item detail">
+                <div class="portfolio-item">
                     <img src="img/model4.png" alt="Garment Detail 2" loading="lazy">
                 </div>
-                <div class="portfolio-item tall">
+                <div class="portfolio-item">
                     <img src="img/model5.png" alt="Luxury Gown 2" loading="lazy">
                 </div>
-                <div class="portfolio-item detail">
+                <div class="portfolio-item">
                     <img src="img/model6.png" alt="Garment Detail 3" loading="lazy">
                 </div>
-                <div class="portfolio-item detail">
+                <div class="portfolio-item">
                     <img src="img/model7.png" alt="Garment Detail 4" loading="lazy">
                 </div>
             </div>
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="#" class="btn-white-outline" style="color: black; border-color: black;">View More</a>
+            </div>
         </section>
 
-        <!-- Section 5: The Essence Carousel -->
+        <!-- Section 6: The Essence Carousel -->
         <section class="essence-carousel">
             <div class="essence-word active">EXCEPTIONAL</div>
             <div class="essence-word">BESPOKE</div>
             <div class="essence-word">SIMPLE</div>
         </section>
 
-        <!-- Section 6: The "Book Holiness" Concierge -->
+        <!-- Section 7: The Concierge -->
         <section class="concierge">
-            <p style="font-size: 2rem; margin-bottom: 50px; text-align: center;">BOOK A DRESS</p>
+            <p style="font-size: 1.5rem; margin-bottom: 50px; text-align: center; letter-spacing: 0.2em; text-transform: uppercase;">Book A Consultation</p>
             <form class="concierge-form">
                 <div class="form-group">
-                    <input type="text" placeholder="NAME" required id="name">
+                    <input type="text" placeholder="NAME" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="DATE" onfocus="(this.type='date')" onblur="(this.type='text')" required id="date">
+                    <input type="text" placeholder="DATE" onfocus="(this.type='date')" onblur="(this.type='text')" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="ADDRESS" required id="address">
+                    <textarea placeholder="MESSAGE" rows="4"></textarea>
                 </div>
-                <div class="form-group">
-                    <textarea placeholder="MESSAGE" rows="4" id="message"></textarea>
-                </div>
-                <button type="submit" class="book-btn">BOOK A DRESS</button>
+                <button type="submit" class="book-btn" style="background: black; color: white;">Submit Enquiry</button>
             </form>
         </section>
     </main>
 
-    <!-- Section 7: The Victor Usen Footer -->
+    <!-- Section 8: Footer -->
     <footer>
-        <!-- <div class="logo-footer">
-            <img src="img/logo-white.png" alt="Logo" height="40">
-        </div> -->
         <div class="social-icons">
             <a href="#"><i class="fab fa-whatsapp"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-facebook"></i></a>
         </div>
         <div class="credit">
-            Designed by Victor Usen
+            Designed by Victor Usen | 2026
         </div>
     </footer>
 
