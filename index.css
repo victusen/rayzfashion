@@ -244,6 +244,7 @@ header .logo {
     width: 100%;
     height: 450px;
     object-fit: cover;
+    object-position: center top; /* Focus on upper body */
 }
 
 .founder-content {
@@ -346,7 +347,7 @@ header .logo {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top 10%;
+    object-position: center top; /* Focus on models' upper body */
     transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
     background: black;
 }
@@ -517,7 +518,11 @@ footer {
     }
     .founder-img {
         width: 100%;
-        height: 350px; /* Fixed height for image on mobile to keep it consistent */
+        height: 400px; /* Square-ish landscape for mobile */
+    }
+    .founder-img img {
+        height: 100%;
+        object-position: center 20%; /* Fine-tuned for mobile upper body */
     }
     .founder-content {
         padding: 0 20px;
@@ -537,6 +542,9 @@ footer {
     }
     .header-inner {
         justify-content: center;
+    }
+    .hamburger {
+        left: 20px; /* Aligned with container padding */
     }
     .enquiry-content h2 {
         font-size: 2rem;
