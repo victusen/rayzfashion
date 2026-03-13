@@ -222,7 +222,7 @@ header .logo {
 
 .founder-img img {
     width: 100%;
-    height: 700px;
+    height: 500px;
     object-fit: cover;
 }
 
@@ -471,7 +471,8 @@ footer {
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    opacity: 0.6;
+    color: var(--pure-white);
+    opacity: 1;
 }
 
 @media (max-width: 1024px) {
