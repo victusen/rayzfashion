@@ -381,8 +381,9 @@ header .logo {
     align-items: center;
     gap: 32px;
     padding: 40px 40px;
-    /* margin-top: var(--section-gap-desktop); */
+    padding-top: var(--section-gap-desktop);
     flex-wrap: wrap;
+    margin-bottom: 10px;
 }
 
 .pillar {
@@ -417,8 +418,16 @@ header .logo {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    /* align-items: center; */
 }
+
+.concierge-title {
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    text-align: center; /* Centered by default (desktop) */
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
 .concierge-form {
     display: flex;
     flex-direction: column;
@@ -541,9 +550,7 @@ footer {
     }
 }
 
-/* ====================================================
-   MOBILE NAVIGATION DRAWER
-   ==================================================== */
+/* MOBILE NAVIGATION DRAWER */
 
 /* Dark overlay behind drawer */
 .nav-overlay {
@@ -568,7 +575,7 @@ footer {
     top: 0;
     left: 0;
     width: min(320px, 85vw);
-    height: 100%;
+    height: 110vh;
     background: var(--black);
     z-index: 2000;
     transform: translateX(-100%);
@@ -697,8 +704,8 @@ footer {
 
 /* Each card — full brightness by default */
 .model-card {
-    flex: 0 0 320px; /* Fixed width for better control on desktop */
-    height: 800px;  /* Significantly taller as requested */
+    flex: 0 0 420px; /* Width maintained for desktop Presence */
+    height: 520px;  /* Reduced height for better proportion as requested */
     overflow: hidden;
     background: var(--charcoal);
     position: relative;
@@ -786,6 +793,16 @@ footer {
     opacity: 1;
 }
 
+.char-counter {
+    position: absolute;
+    right: 0;
+    bottom: -20px;
+    font-size: 10px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
 @media (max-width: 1024px) {
     header {
         height: var(--header-height-mobile);
@@ -818,6 +835,10 @@ footer {
     .founder-content {
         padding: 0 20px;
         text-align: center;
+    }
+
+    .concierge-title {
+        text-align: left; /* Left aligned on mobile */
     }
     .founder-content p {
         margin: 0 auto 2rem;
@@ -878,7 +899,7 @@ footer {
 
 @media screen and (max-width: 1024px) {
     .founder-img {
-        padding: 0 60px;
+        padding: 0 40px;
         height: 500px;
         /* width: 600px; */
         object-fit: cover;

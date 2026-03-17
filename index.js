@@ -238,9 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // =============================================
     // INTERSECTION OBSERVER FADE-IN
-    // =============================================
     var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
@@ -261,9 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // =============================================
     // FLOATING BACK-TO-TOP BUTTON
-    // =============================================
     var floatBtn = document.querySelector('.floating-btn');
     if (floatBtn) {
         window.addEventListener('scroll', function() {
@@ -272,6 +268,18 @@ document.addEventListener('DOMContentLoaded', () => {
         floatBtn.addEventListener('click', function(e) {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // CHARACTER COUNTER
+    const messageInputCheck = document.getElementById('userMessage');
+    const charCountDisplay = document.getElementById('charCount');
+
+    if (messageInputCheck && charCountDisplay) {
+        messageInputCheck.addEventListener('input', () => {
+            const length = messageInputCheck.value.length;
+            charCountDisplay.textContent = `${length} / 500`;
+            charCountDisplay.style.color = length >= 450 ? '#ff4d4d' : '#999';
         });
     }
 

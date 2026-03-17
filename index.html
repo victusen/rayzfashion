@@ -173,7 +173,7 @@
 
         <!-- Section 7: The Concierge -->
         <section class="concierge" id="consultation">
-            <p style="font-size: 1.2rem; margin-bottom: 50px; text-align: center; letter-spacing: 0.2em; text-transform: uppercase;">Book A Dress</p>
+            <p class="concierge-title">Book A Dress</p>
             <form class="concierge-form">
                 <div class="form-group">
                     <input type="text" id="userName" name="name" placeholder="Name:" required minlength="3" pattern="^[a-zA-Z\s]+$" title="Name should contain only letters and be at least 3 characters long.">
@@ -190,6 +190,7 @@
                 <div class="form-group">
                     <textarea id="userMessage" name="message" placeholder="Message: ..." rows="4" maxlength="500"></textarea>
                     <span class="error-message" style="bottom: -15px;">Message is too long (max 500 chars).</span>
+                    <div id="charCount" class="char-counter">0 / 500</div>
                 </div>
                 <button type="submit" class="book-btn" style="background: black; color: white;">Submit Enquiry</button>
             </form>
