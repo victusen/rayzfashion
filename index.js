@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // =============================================
     // HAMBURGER / MOBILE MENU DRAWER
-    // =============================================
     const hamburger   = document.querySelector('.hamburger');
     const mobileMenu  = document.getElementById('mobileMenu');
     const navOverlay  = document.getElementById('navOverlay');
@@ -205,35 +203,50 @@ document.addEventListener('DOMContentLoaded', () => {
             // Final check
             if (!form.checkValidity()) return;
 
-            var nameInput = document.getElementById('userName');
-            var whatsAppInput = document.getElementById('userWhatsApp');
-            var messageInput = document.getElementById('userMessage');
-
-            // Simple sanitisation
-            var cleanName = sanitize(nameInput.value);
-            var cleanWhatsApp = sanitize(whatsAppInput.value);
-            var cleanMessage = sanitize(messageInput.value);
-
-            // Logic to handle the data...
-            console.log("Sanitised Data:", { name: cleanName, whatsapp: cleanWhatsApp, message: cleanMessage });
-
             var btn = e.target.querySelector('button');
             var originalText = btn.textContent;
-            btn.textContent = "booking's sending...";
+            
+            // Show sending state
+            btn.textContent = "SENDING ENQUIRY...";
             btn.style.opacity = '0.7';
             btn.disabled = true;
 
-            setTimeout(function() {
-                btn.textContent = 'THANK YOU';
-                btn.style.background = '#D4AF37';
-                form.reset();
-                setTimeout(function() {
-                    btn.textContent = originalText;
-                    btn.style.opacity = '1';
-                    btn.style.background = '#000';
-                    btn.disabled = false;
-                }, 3000);
-            }, 1500);
+            // EmailJS Integration 
+            // Using credentials from config.js for reliability in static sites
+            const { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY } = window.EMAILJS_CONFIG;
+
+            if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+                console.error('EmailJS credentials missing from config.js');
+                btn.textContent = 'CONFIG ERROR';
+                btn.disabled = false;
+                return;
+            }
+
+            emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, this, PUBLIC_KEY)
+                .then(function() {
+                    btn.textContent = 'MESSAGE SENT';
+                    btn.style.background = '#D4AF37';
+                    form.reset();
+                    if (charCountDisplay) charCountDisplay.textContent = "0 / 500";
+                    
+                    setTimeout(function() {
+                        btn.textContent = originalText;
+                        btn.style.opacity = '1';
+                        btn.style.background = '#000';
+                        btn.disabled = false;
+                    }, 4000);
+                }, function(error) {
+                    console.error('EmailJS Error:', error);
+                    btn.textContent = 'FAILED TO SEND';
+                    btn.style.background = '#ff4d4d';
+                    
+                    setTimeout(function() {
+                        btn.textContent = originalText;
+                        btn.style.opacity = '1';
+                        btn.style.background = '#000';
+                        btn.disabled = false;
+                    }, 4000);
+                });
         });
     }
 

@@ -180,16 +180,20 @@
                     <span class="error-message">Enter a valid name (letters only).</span>
                 </div>
                 <div class="form-group">
-                    <input type="tel" id="userWhatsApp" name="whatsapp" placeholder="Number: (e.g., +234...)" required pattern="^\+?[0-9]{10,15}$" title="Enter a valid WhatsApp number (10-15 digits, optionally starting with +).">
-                    <span class="error-message">Enter a valid WhatsApp number.</span>
+                    <input type="tel" id="userWhatsApp" name="phone" placeholder="Phone:" required pattern="^\+?[0-9]{10,15}$" title="Enter a valid phone number.">
+                    <span class="error-message">Enter a valid phone number.</span>
                 </div>
                 <div class="form-group">
-                    <input type="text" id="userDate" name="date" placeholder="Date:" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+                    <input type="email" id="userEmail" name="email" placeholder="Email Address:" required>
+                    <span class="error-message">Enter a valid email address.</span>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="userDate" name="time" placeholder="Requesting Date:" onfocus="(this.type='date')" onblur="(this.type='text')" required>
                     <span class="error-message">Pick a date for your fitting.</span>
                 </div>
                 <div class="form-group">
                     <textarea id="userMessage" name="message" placeholder="Message: ..." rows="4" maxlength="500"></textarea>
-                    <span class="error-message" style="bottom: -15px;">Message is too long (max 500 chars).</span>
+                    <span class="error-message" style="bottom: -15px;">Message is too long.</span>
                     <div id="charCount" class="char-counter">0 / 500</div>
                 </div>
                 <button type="submit" class="book-btn" style="background: black; color: white;">Submit Enquiry</button>
@@ -213,6 +217,8 @@
         </div>
     </footer>
 
+    <script src="config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="index.js"></script>
 </body>
 </html>

@@ -899,7 +899,7 @@ footer {
 
 @media screen and (max-width: 1024px) {
     .founder-img {
-        padding: 0 40px;
+        padding: 0 30px;
         height: 500px;
         /* width: 600px; */
         object-fit: cover;
