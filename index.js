@@ -28,24 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // =============================================
-    // ESSENCE CAROUSEL (word rotator)
-    // =============================================
-    const words = document.querySelectorAll('.essence-word');
-    let currentIndex = 0;
-
-    function nextWord() {
-        var activeWord = words[currentIndex];
-        activeWord.classList.remove('active');
-        activeWord.classList.add('exit');
-        setTimeout(function() { activeWord.classList.remove('exit'); }, 600);
-        currentIndex = (currentIndex + 1) % words.length;
-        words[currentIndex].classList.add('active');
-    }
-
-    if (words.length > 0) setInterval(nextWord, 2000);
-
-
-    // =============================================
     // MODELS CAROUSEL  (spotlight / peek + infinite loop)
     // =============================================
     var track    = document.getElementById('modelsTrack');

@@ -8,7 +8,7 @@
     --pure-white: #FFFFFF;
     --header-height-desktop: 90px;
     --header-height-mobile: 80px;
-    --section-gap-desktop: 150px;
+    --section-gap-desktop: 100px;
     --section-gap-mobile: 80px;
     --sans: 'Outfit', sans-serif;
     --serif: 'Playfair Display', serif;
@@ -374,44 +374,39 @@ header .logo {
 .tall, .detail { grid-column: auto; grid-row: auto; }
 
 
-/* Section 5: Essence Carousel */
-.essence-carousel {
-    height: 400px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 120px auto 20px;
+/* Section 5: Brand Pillars (static) */
+.brand-pillars {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    position: relative; /* Fixed: Essential for absolute positioning of words */
-    overflow: hidden;
+    gap: 32px;
+    padding: 40px 40px;
+    /* margin-top: var(--section-gap-desktop); */
+    flex-wrap: wrap;
 }
 
-.essence-word {
-    position: absolute;
-    font-size: clamp(20px, 12vw, 100px);
+.pillar {
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 4vw, 3.2rem);
     font-weight: 400;
-    opacity: 0;
-    visibility: hidden; /* Ensure words not in use are completely hidden */
-    transform: translateX(100%);
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    letter-spacing: 0.2em;
+    font-style: italic;
     color: var(--gold);
-    white-space: nowrap;
-    pointer-events: none; 
+    letter-spacing: 0.12em;
+    text-transform: capitalize;
 }
 
-.essence-word.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
+.pillar-divider {
+    font-size: clamp(1.4rem, 3vw, 2.4rem);
+    color: rgba(212, 175, 55, 0.45);
+    font-weight: 300;
+    line-height: 1;
 }
 
-.essence-word.exit {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-300%);
+@media (max-width: 480px) {
+    .brand-pillars {
+        gap: 20px;
+        /* padding: 60px 20px; */
+    }
 }
 
 /* Section 6: Book Holiness Form */
