@@ -695,22 +695,22 @@ footer {
     will-change: transform;
 }
 
-/* Each card — dimmed & slightly shrunk by default */
+/* Each card — full brightness by default */
 .model-card {
-    flex: 0 0 clamp(260px, 80vw, 860px);
-    height: clamp(420px, 62vh, 660px);
+    flex: 0 0 320px; /* Fixed width for better control on desktop */
+    height: 800px;  /* Significantly taller as requested */
     overflow: hidden;
     background: var(--charcoal);
     position: relative;
-    opacity: 0.35;
-    transform: scale(0.93);
-    transition: opacity 0.55s ease, transform 0.55s ease;
+    opacity: 1;     /* No transparency */
+    transform: scale(1);
+    transition: opacity 0.55s ease, transform 0.55s ease, filter 0.55s ease;
 }
 
-/* Active / center card — full size & full brightness */
+/* Active / center card — can add a subtle highlight if needed, or keep it consistent */
 .model-card.is-active {
-    opacity: 1;
-    transform: scale(1);
+    /* Optional: filter: brightness(1.1); */
+    transform: scale(1.02); /* Very subtle scale for the active one */
 }
 
 .model-card img {
@@ -763,6 +763,27 @@ footer {
         flex: 0 0 78vw;
         height: 360px;
     }
+}
+
+/* Input Validation Styles */
+.form-group input:invalid:not(:placeholder-shown) {
+    border-bottom: 1px solid #ff4d4d;
+}
+
+.form-group .error-message {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    font-size: 10px;
+    color: #ff4d4d;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.form-group input:invalid:not(:placeholder-shown) + .error-message {
+    opacity: 1;
 }
 
 @media (max-width: 1024px) {

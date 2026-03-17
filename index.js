@@ -189,17 +189,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // =============================================
-    // FORM SUBMISSION
-    // =============================================
+    // FORM SUBMISSION & SANITISATION
     var form = document.querySelector('.concierge-form');
+    
+    function sanitize(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+
     if (form) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            // Final check
+            if (!form.checkValidity()) return;
+
+            var nameInput = document.getElementById('userName');
+            var whatsAppInput = document.getElementById('userWhatsApp');
+            var messageInput = document.getElementById('userMessage');
+
+            // Simple sanitisation
+            var cleanName = sanitize(nameInput.value);
+            var cleanWhatsApp = sanitize(whatsAppInput.value);
+            var cleanMessage = sanitize(messageInput.value);
+
+            // Logic to handle the data...
+            console.log("Sanitised Data:", { name: cleanName, whatsapp: cleanWhatsApp, message: cleanMessage });
+
             var btn = e.target.querySelector('button');
             var originalText = btn.textContent;
             btn.textContent = "booking's sending...";
             btn.style.opacity = '0.7';
+            btn.disabled = true;
+
             setTimeout(function() {
                 btn.textContent = 'THANK YOU';
                 btn.style.background = '#D4AF37';
@@ -208,6 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     btn.textContent = originalText;
                     btn.style.opacity = '1';
                     btn.style.background = '#000';
+                    btn.disabled = false;
                 }, 3000);
             }, 1500);
         });
