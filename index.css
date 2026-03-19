@@ -879,10 +879,10 @@ footer {
         background: rgba(0,0,0,0.5);
         align-items: center;
         padding-bottom: 0;
-        height: 120vh;
         /* margin-top: 200px; */
     }
     .hero {
+        height: 120vh;
         margin-top: 0;
     }
     .concierge {
