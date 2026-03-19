@@ -438,6 +438,11 @@ header .logo {
     position: relative;
 }
 
+::placeholder {
+    font-size: 1.2rem;
+    color: rgb(150, 150, 150);
+}
+
 .form-group input, 
 .form-group textarea {
     width: 100%;
@@ -874,6 +879,7 @@ footer {
         background: rgba(0,0,0,0.5);
         align-items: center;
         padding-bottom: 0;
+        height: 120vh;
         /* margin-top: 200px; */
     }
     .hero {
