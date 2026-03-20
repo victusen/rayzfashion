@@ -240,6 +240,10 @@ header .logo {
     margin-bottom: 50px;
 }
 
+#section-founder {
+    scroll-margin-top: var(--header-height-desktop);
+}
+
 .founder {
     display: flex;
     align-items: center;
@@ -698,12 +702,15 @@ footer {
     padding-top: 100px;
     margin-bottom: var(--section-gap-desktop);
 }
-
+#models-section {
+    scroll-margin-top: calc(var(--header-height-desktop) - 180px);
+}
 .models-carousel-wrapper {
     overflow: hidden;
     width: 100%;
     cursor: grab;
     user-select: none;
+    margin-top: 60px;
 }
 
 .models-carousel-wrapper:active {
@@ -931,6 +938,10 @@ footer {
     }
     .concierge {
         padding: 100px 25px;
+    }
+
+    #models-section {
+        scroll-margin-top: calc(var(--header-height-mobile) - 100px);
     }
 }
 
