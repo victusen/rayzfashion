@@ -751,21 +751,44 @@ footer {
 }
 
 /* Dot indicators */
+.models-dots-container {
+    width: fit-content;
+    margin: 60px auto 0;
+    overflow: hidden;
+    position: relative;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.models-dots-container.is-sliding {
+    width: 90px; /* Providing extra room for the dots' scale and padding */
+    padding: 0 6px; /* Prevents cropping on the first/last dot due to scale(1.5) */
+    justify-content: flex-start;
+}
+
 .models-dots {
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 10px;
-    margin-top: 80px;
+    gap: 8px; /* Slightly tighter gap to fit 6 dots in 90px */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    width: fit-content;
+}
+
+/* Opacity effect when shifting */
+.models-dots.shifting {
+    opacity: 0.6;
 }
 
 .models-dot {
     width: 6px;
     height: 6px;
+    flex-shrink: 0;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     border: none;
     padding: 0;
 }
@@ -773,6 +796,14 @@ footer {
 .models-dot.active {
     background: var(--black);
     transform: scale(1.5);
+}
+
+.models-dot.small {
+    transform: scale(0.66);
+}
+
+.models-dot.extra-small {
+    transform: scale(0.33);
 }
 
 @media (max-width: 768px) {

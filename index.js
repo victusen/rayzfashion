@@ -90,11 +90,61 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
+            var lastRealIdx = 0; // tracking for shifting animation
+
             function updateDots() {
                 var realIdx = ((mcIndex - totalReal) % totalReal + totalReal) % totalReal;
-                dotsWrap.querySelectorAll('.models-dot').forEach(function(d, i) {
-                    d.classList.toggle('active', i === realIdx);
-                });
+                var dots = Array.from(dotsWrap.querySelectorAll('.models-dot'));
+                var dotsContainer = dotsWrap.parentElement;
+                
+                if (totalReal > 6) {
+                    dotsContainer.classList.add('is-sliding');
+                    // Instagram sliding window logic
+                    var visibleCount = 6;
+                    var windowStart = 0;
+
+                    if (realIdx < 4) {
+                        windowStart = 0;
+                    } else if (realIdx >= totalReal - 2) {
+                        windowStart = totalReal - visibleCount;
+                    } else {
+                        // Keep current active dot at index 3 (4th dot) if possible
+                        windowStart = realIdx - 3;
+                    }
+
+                    // Calculate offset for dots container
+                    // Dot (6px) + Gap (8px) = 14px
+                    var stepWidth = 14; 
+                    var translateX = -(windowStart * stepWidth);
+                    dotsWrap.style.transform = 'translateX(' + translateX + 'px)';
+
+                    // Shifting animation if the dots index changed (even if window stays same)
+                    if (realIdx !== lastRealIdx) {
+                        dotsWrap.classList.add('shifting');
+                        setTimeout(() => dotsWrap.classList.remove('shifting'), 400);
+                    }
+
+                    // Apply classes for active and shrinking effect
+                    dots.forEach(function(d, i) {
+                        d.classList.remove('active', 'small', 'extra-small');
+                        
+                        if (i === realIdx) {
+                            d.classList.add('active');
+                        } else if (i === windowStart || i === windowStart + visibleCount - 1) {
+                            // Edge dots of the visible window
+                            d.classList.add('extra-small');
+                        } else if (i === windowStart + 1 || i === windowStart + visibleCount - 2) {
+                            // Dots next to edges
+                            d.classList.add('small');
+                        }
+                    });
+                } else {
+                    // Normal behavior for <= 6 dots
+                    dots.forEach(function(d, i) {
+                        d.classList.toggle('active', i === realIdx);
+                    });
+                }
+                lastRealIdx = realIdx;
             }
 
             // --- 5. Core move ---
